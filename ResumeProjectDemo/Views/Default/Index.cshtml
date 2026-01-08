@@ -31,65 +31,7 @@
 		</button>
 
 		<!-- Site header -->
-		<header class="site-header site-header-light bg-dark">
-			<div class="header-inner">
-				<div class="header-brand">
-					<!-- Logo -->
-					<a href="#" class="logo">
-						<span>Amanda Malat</span>
-						<span class="title-letter text-white opacity-10">A</span>
-					</a>
-				</div>
-				<div class="nav-divider mb-8"></div>
-				<nav class="site-nav">
-					<ul id="navigation">
-						<li>
-							<a href="#home" class="scrollto">Home</a>
-						</li>
-						<li>
-							<a href="#about" class="scrollto">About</a>
-						</li>
-						<li>
-							<a href="#services" class="scrollto">Services</a>
-						</li>
-						<li>
-							<a href="#portfolio" class="scrollto">Portfolio</a>
-						</li>
-						<li>
-							<a href="#news" class="scrollto">News</a>
-						</li>
-						<li>
-							<a href="#contact" class="scrollto">Contact</a>
-						</li>
-					</ul>
-				</nav>
-				<div class="nav-divider my-8"></div>
-				<nav>
-					<ul class="list-inline text-center">
-						<li class="list-inline-item">
-							<a class="btn btn-sm btn-icon btn-outline-white border-0 rounded-circle" href="#">
-								<span class="btn-icon-inner fab fa-facebook-f"></span>
-							</a>
-						</li>
-						<li class="list-inline-item">
-							<a class="btn btn-sm btn-icon btn-outline-white border-0 rounded-circle" href="#">
-								<span class="btn-icon-inner fab fa-instagram"></span>
-							</a>
-						</li>
-						<li class="list-inline-item">
-							<a class="btn btn-sm btn-icon btn-outline-white border-0 rounded-circle" href="#">
-								<span class="btn-icon-inner fab fa-twitter"></span>
-							</a>
-						</li>
-						<li class="list-inline-item">
-							<a class="btn btn-sm btn-icon btn-outline-white border-0 rounded-circle" href="#">
-								<span class="btn-icon-inner fab fa-pinterest"></span>
-							</a>
-						</li>
-					</ul>
-				</nav>
-			</div>
-		</header>
+		@await Component.InvokeAsync("_DefaultHeaderComponentPartial")
 
 		<!-- Header overlay -->
 		<div class="header-overlay">
@@ -128,122 +70,15 @@
 
 			<div class="page-content">
 
-				<section id="about">
-					<div class="container">
-						<div class="section-title h2 text-center mb-8">
-							<h2 class="mb-0">About Me</h2>
-							<span class="title-letter">A</span>
-						</div>
-						<div class="row">
-							<div class="col-md-6 col-lg-4 d-none d-lg-block">
-								<img class="img-fluid w-100 rounded" src="demo/images/avatar.jpg" alt="">
-							</div>
-							<div class="col-lg-8">
-								<h3>Amanda Malat</h3>
-								<p class="lead">UI/UX Designer</p>
-								<p class="mb-5">I’m Amanda Malat a marketing specialist with over five years work experience. Donec sed fringilla lectus, non vulputate orci. Integer id libero euismod, interdum ligula vel, porttitor magna. Sed euismod maximus finibus. Pellentesque tempus ultricies nisi at cursus. Nulla at nisi tellus. Suspendisse potenti.</p>
-								<div class="row mb-8">
-									<div class="col-md-6 mb-5 mb-md-0">
-										<h4 class="mb-4">Education</h4>
-										<p class="h5">MA Online Marketing</p>
-										<p>New York University, 2000 - 2003</p>
-										<p class="h5">BA Business & Marketing</p>
-										<p>Silver Oak College, 1998 - 2000</p>
-									</div>
+				@await Component.InvokeAsync("_DefaultAboutComponentPartial")
 
-									<div class="col-md-6">
-										<h4 class="mb-4">Awards</h4>
-										<p class="h5">Best Product Launch</p>
-										<p>FGA Marketing Awards, 2015</p>
-										<p class="h5">Highly Commended</p>
-										<p>Women in Business, 2010</p>
-									</div>
-								</div>
-								<a href="#" class="btn btn-primary">Download CV</a>
-								<a href="#contact" class="btn btn-light scrollto">Send Message</a>
-							</div>
-						</div>
-					</div>
-				</section>
+				@await Component.InvokeAsync("_DefaultSkillComponentPartial")
+			
+				@await Component.InvokeAsync("_DefaultExperienceComponentPartial")
 
-				<section id="skills" class="bg-light">
-					<div class="container">
-						<div class="row mb-8">
-							<div class="col-lg-10 col-xl-8 mx-lg-auto text-center">
-								<div class="section-title h2 mb-3">
-									<h2 class="mb-0">Skills</h2>
-									<span class="title-letter">S</span>
-								</div>
-								<p>Fusce massa dolor, mattis sed ultrices ut, placerat ut leo. Donec sed fringilla lectus, non vulputate orci. Integer id libero euismod, interdum ligula vel, porttitor magna. Sed euismod maximus finibus.</p>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-md-6 mb-4 mb-md-0">
-								<p class="h6 mb-1">Social Media</p>
-								<div class="progress mb-6 rounded-0" style="height:5px">
-									<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-								<p class="h6 mb-1">Project Management</p>
-								<div class="progress rounded-0" style="height:5px">
-									<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-							<div class="col-md-6">
-								<p class="h6 mb-1">Analytical Knowledge</p>
-								<div class="progress mb-6 rounded-0" style="height:5px">
-									<div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-								<p class="h6 mb-1">Creativity & Expression</p>
-								<div class="progress rounded-0" style="height:5px">
-									<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
+			
 
-				<section id="experience" class="pb-0">
-					<div class="container">
-						<div class="section-title h2 text-center mb-8">
-							<h2 class="mb-0">Experience</h2>
-							<span class="title-letter">E</span>
-						</div>
-
-						<div class="row">
-							<div class="col-lg-4 mb-1 mb-lg-0">
-								<p class="h5 mb-0">Marketing Manager</p>
-								<p class="opacity-75">West House Productions, 2015 - 2020</p>
-							</div>
-							<div class="col-lg-8">
-								<p>Brief description of the position and the responsibilities you had in this post. Fusce massa dolor, mattis sed ultrices ut, placerat ut leo. Donec sed fringilla lectus, non vulputate orci. Integer id libero euismod, interdum ligula vel, porttitor magna. Sed euismod maximus finibus. Pellentesque tempus ultricies nisi at cursus. Nulla at nisi tellus. Suspendisse potenti.</p>
-							</div>
-						</div>
-
-						<hr />
-
-						<div class="row">
-							<div class="col-lg-4 mb-1 mb-lg-0">
-								<p class="h5 mb-0">Marketing Consultant</p>
-								<p class="opacity-75">Jump High Marketing, 2012 - 2015</p>
-							</div>
-							<div class="col-lg-8">
-								<p>Brief description of the position and the responsibilities you had in this post. Fusce massa dolor, mattis sed ultrices ut, placerat ut leo. Donec sed fringilla lectus, non vulputate orci. Integer id libero euismod, interdum ligula vel, porttitor magna. Sed euismod maximus finibus. Pellentesque tempus ultricies nisi at cursus. Nulla at nisi tellus. Suspendisse potenti.</p>
-							</div>
-						</div>
-
-						<hr />
-
-						<div class="row">
-							<div class="col-lg-4 mb-1 mb-lg-0">
-								<p class="h5 mb-0">Product Manager</p>
-								<p class="opacity-75">Trident Prototyping Studios, 2007 - 2011</p>
-							</div>
-							<div class="col-lg-8">
-								<p>Brief description of the position and the responsibilities you had in this post. Fusce massa dolor, mattis sed ultrices ut, placerat ut leo. Donec sed fringilla lectus, non vulputate orci. Integer id libero euismod, interdum ligula vel, porttitor magna. Sed euismod maximus finibus. Pellentesque tempus ultricies nisi at cursus. Nulla at nisi tellus. Suspendisse potenti.</p>
-							</div>
-						</div>
-					</div>
-				</section>
+			
 
 				<section id="services" class="pb-0">
 					<div class="container">
@@ -753,25 +588,7 @@
 
 	</div>
 
-	<!-- Libs JS -->
-	<script src="/templates/assets/vendor/jquery/dist/jquery.min.js"></script>
-	<script src="/templates/assets/vendor/popper.js/dist/popper.min.js"></script>
-	<script src="/templates/assets/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-	<script src="/templates/assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-	<script src="/templates/assets/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
-	<script src="/templates/assets/vendor/jquery-form/dist/jquery.form.min.js"></script>
-	<script src="/templates/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-	<script src="/templates/assets/vendor/isotope/dist/isotope.pkgd.min.js"></script>
-	<script src="/templates/assets/vendor/featherlight/jquery.detect_swipe.js"></script>
-	<script src="/templates/assets/vendor/featherlight/featherlight.min.js"></script>
-	<script src="/templates/assets/vendor/featherlight/featherlight.gallery.min.js"></script>
-	<script src="/templates/assets/vendor/slick/slick.min.js"></script>
-	<script src="/templates/assets/vendor/vegas/vegas.min.js"></script>
-	<script src="/templates/assets/vendor/typed.js/typed.min.js"></script>
-	<script src="/templates/assets/vendor/granim.js/dist/granim.min.js"></script>
-
-	<!-- Theme JS -->
-	<script src="/templates/assets/js/main.js"></script>
+	@await Component.InvokeAsync("_DefaultScriptsComponentPartial")
 
 </body>
 </html>
