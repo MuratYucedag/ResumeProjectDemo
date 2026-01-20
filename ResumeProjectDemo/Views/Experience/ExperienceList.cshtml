@@ -1,0 +1,74 @@
+﻿@model List<ResumeProjectDemo.Entities.Experience>
+
+@{
+    ViewData["Title"] = "ExperienceList";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="flex-1 overflow-y-auto p-8">
+    <div class="max-w-6xl mx-auto space-y-8">
+        <!-- Page Heading -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+                <h3 class="text-3xl font-black tracking-tight">Deneyim Listesi</h3>
+                <p class="text-slate-500 dark:text-[#9db2b9] mt-1">Deneyim içeriklerinizi düzenleyebilir, yeni deneyim ekleyebilirsiniz.</p>
+            </div>
+            <a href="/Experience/CreateExperience/" class="flex items-center gap-2 px-5 py-2.5 bg-primary text-background-dark rounded-lg font-bold text-sm hover:opacity-90 transition-opacity">
+                <span class="material-symbols-outlined text-[20px]">add</span>
+                Yeni Deneyim Girişi
+            </a>
+        </div>
+        <!-- Projects Table Container -->
+        <div class="bg-white dark:bg-[#111618] rounded-xl border border-slate-200 dark:border-[#3b4d54] overflow-hidden shadow-sm">
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="bg-slate-50 dark:bg-[#1c2427] border-b border-slate-200 dark:border-[#3b4d54]">
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#9db2b9]">#</th>
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#9db2b9]">Şirket Adı - Unvan</th>
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#9db2b9]">Çalışma Tarihi</th>
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#9db2b9]">Açıklama</th>
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#9db2b9] text-right">Sil</th>
+                            <th class="px-6 py-4 text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-[#9db2b9] text-right">Güncelle</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 dark:divide-[#3b4d54]">
+
+                        @foreach(var item in Model)
+                        {
+                            <!-- Row 1 -->
+                            <tr class="hover:bg-slate-50/50 dark:hover:bg-white/5 transition-colors group">
+                              
+                                <td class="px-6 py-5 font-semibold text-sm">@item.ExperienceId</td>
+                                <td class="px-6 py-5 font-semibold text-sm">@item.Title</td>
+                                <td class="px-6 py-5 font-semibold text-sm">@item.WorkDate</td>
+                                <td class="px-6 py-5 font-semibold text-sm">@item.Description</td>
+                                <td class="px-6 py-5 text-right">
+                                    <a href="/Experience/DeleteExperience/@item.ExperienceId" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-red-500 hover:bg-red-600 text-white rounded-lg font-medium text-xs transition-colors">
+                                        <span class="material-symbols-outlined text-[16px]">delete</span>
+                                        Sil
+                                    </a>
+                                </td>
+                                <td class="px-6 py-5 text-right">
+                                    <a href="/Experience/UpdateExperience/@item.ExperienceId" class="inline-flex items-center gap-1.5 px-3 py-1.5 bg-green-500 hover:bg-green-600 text-white rounded-lg font-medium text-xs transition-colors">
+                                        <span class="material-symbols-outlined text-[16px]">edit</span>
+                                        Güncelle
+                                    </a>
+                                </td>
+               
+                            </tr>
+                        }             
+                    </tbody>
+                </table>
+            </div>
+            <div class="px-6 py-4 bg-slate-50/30 dark:bg-[#1c2427]/30 border-t border-slate-200 dark:border-[#3b4d54] flex items-center justify-between">
+                <p class="text-xs text-slate-500 dark:text-[#9db2b9]">Toplam @Model.Count Deneyim bulunmaktadır.</p>
+                <div class="flex gap-2">
+                    <button class="px-3 py-1 rounded border border-slate-200 dark:border-[#283539] text-xs font-bold disabled:opacity-50" disabled="">Önceki</button>
+                    <button class="px-3 py-1 rounded border border-slate-200 dark:border-[#283539] text-xs font-bold hover:bg-slate-100 dark:hover:bg-[#283539]">Sonraki</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
